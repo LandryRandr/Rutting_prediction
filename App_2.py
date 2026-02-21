@@ -120,7 +120,7 @@ with col_graph:
         res_col2.write(f"**Drainage:** {'Oui' if DRAINAGE == 1 else 'Non'}")
         
         # --- CALCUL DE L'ÉVOLUTION (0 à 15 ANS) ---
-        ages_simulés = list(range(0, 16))
+        ages_simulés = list(range(0, 9))
         predictions_rutting = []
 
         for a in ages_simulés:
@@ -142,17 +142,18 @@ with col_graph:
         df_plot = pd.DataFrame({'Années': ages_simulés, 'Orniérage (mm)': predictions_rutting})
         
         fig = px.line(df_plot, x='Années', y='Orniérage (mm)', 
-                      title="Évolution de l'Orniérage sur 15 ans",
+                      title="Évolution de l'Orniérage sur 10 ans",
                       markers=True, template="plotly_white")
         
-        fig.add_hline(y=10.0, line_dash="dash", line_color="red", annotation_text="Seuil Critique (10mm)")
+        fig.add_hline(y=8.0, line_dash="dash", line_color="red", annotation_text="Seuil Critique (8mm)")
         
         st.plotly_chart(fig, use_container_width=True)
 
         # Affichage valeur actuelle
-        idx_actuel = int(age_actuel) if age_actuel <= 15 else 15
+        idx_actuel = int(age_actuel) if age_actuel <= 10 else 10
         val_actuelle = predictions_rutting[idx_actuel]
         st.metric("Profondeur à l'âge saisi", f"{val_actuelle:.2f} mm")
         
     else:
+
         st.info("Veuillez remplir le formulaire et cliquer sur 'Analyser' pour voir l'évolution graphique.")
