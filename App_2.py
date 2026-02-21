@@ -165,7 +165,7 @@ with tab2:
     
     # L'URL de votre application une fois déployée sur Streamlit Cloud
     # Remplacez par votre lien réel après le déploiement
-    app_url = "https://ruttingprediction-dqtpfcj2mvd4y3goyq5tkv.streamlit.app/" 
+    app_url = "https://settings-pgw7evg2b4fftv3b3anyan.streamlit.app/" 
     
     st.info(f"Lien de l'application : {app_url}")
 
@@ -184,5 +184,6 @@ with tab2:
     col_qr1, col_qr2, col_qr3 = st.columns([1, 2, 1])
     with col_qr2:
         st.image(byte_im, caption="Scannez ce QR Code avec votre téléphone", use_container_width=True)
+
 
 
