@@ -120,7 +120,7 @@ with col_graph:
         res_col2.write(f"**Drainage:** {'Oui' if DRAINAGE == 1 else 'Non'}")
         
         # --- CALCUL DE L'ÉVOLUTION (0 à 15 ANS) ---
-        ages_simulés = list(range(0, 9))
+        ages_simulés = list(range(1, 10))
         predictions_rutting = []
 
         for a in ages_simulés:
@@ -157,3 +157,4 @@ with col_graph:
     else:
 
         st.info("Veuillez remplir le formulaire et cliquer sur 'Analyser' pour voir l'évolution graphique.")
+
