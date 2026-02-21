@@ -160,3 +160,27 @@ with col_graph:
 
 
 
+with tab2:
+    st.header("📲 Scanner pour tester sur mobile")
+    
+    # L'URL de votre application une fois déployée sur Streamlit Cloud
+    # Remplacez par votre lien réel après le déploiement
+    app_url = "https://votre-projet.streamlit.app" 
+    
+    st.info(f"Lien de l'application : {app_url}")
+
+    # Génération du QR Code
+    qr = qrcode.QRCode(version=1, box_size=10, border=5)
+    qr.add_data(app_url)
+    qr.make(fit=True)
+    img = qr.make_image(fill_color="black", back_color="white")
+
+    # Conversion pour Streamlit
+    buf = BytesIO()
+    img.save(buf, format="PNG")
+    byte_im = buf.getvalue()
+
+    # Affichage centré du QR Code
+    col_qr1, col_qr2, col_qr3 = st.columns([1, 2, 1])
+    with col_qr2:
+        st.image(byte_im, caption="Scannez ce QR Code avec votre téléphone", use_container_width=True)
