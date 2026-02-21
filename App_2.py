@@ -41,7 +41,7 @@ with col_form:
         st.subheader("🏗️ Paramètres de la Structure")
         
         # Section Temps & Trafic (Age actuel pour le calcul ponctuel)
-        age_actuel = st.number_input("Âge actuel de la route (ans)", 0.0, 30.0, 0.0)
+        age_actuel = st.number_input("Âge actuel de la route (ans)", 1.0, 10.0, 0.0)
         KESAL = st.number_input("Trafic cumulé (KESAL)", 0.0, 500000.0, 0.0)
         IRI = st.number_input("Roughness (IRI)", 0.0, 15.0, 0.0)
 
@@ -157,4 +157,5 @@ with col_graph:
     else:
 
         st.info("Veuillez remplir le formulaire et cliquer sur 'Analyser' pour voir l'évolution graphique.")
+
 
