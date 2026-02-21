@@ -34,7 +34,7 @@ st.sidebar.divider()
 st.sidebar.info("Remplissez le formulaire à droite pour mettre à jour les graphiques.")
 
 # 3. MISE EN PAGE : FORMULAIRE (GAUCHE) | GRAPHIQUE (DROITE)
-col_form, col_graph = st.columns([1.2, 1], gap="large")
+col_form, col_graph, tab2 = st.columns([1.2, 1, 1], gap="large")
 
 with col_form:
     with st.form("rutting_form"):
@@ -184,4 +184,5 @@ with tab2:
     col_qr1, col_qr2, col_qr3 = st.columns([1, 2, 1])
     with col_qr2:
         st.image(byte_im, caption="Scannez ce QR Code avec votre téléphone", use_container_width=True)
+
 
