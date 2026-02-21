@@ -3,6 +3,9 @@ import joblib
 import numpy as np
 import pandas as pd
 import plotly.express as px
+import qrcode
+from io import BytesIO
+from PIL import Image
 
 # 1. CONFIGURATION DE LA PAGE
 st.set_page_config(page_title="Pavement Analysis Pro", page_icon="🛣️", layout="wide")
@@ -184,6 +187,7 @@ with tab2:
     col_qr1, col_qr2, col_qr3 = st.columns([1, 2, 1])
     with col_qr2:
         st.image(byte_im, caption="Scannez ce QR Code avec votre téléphone", use_container_width=True)
+
 
 
 
